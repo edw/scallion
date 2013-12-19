@@ -17,7 +17,11 @@ Add the following dependency to your `project.clj`:
 ```clojure
 (require '[scallion.core :refer [env]])
 
-(env :path)
+(env :myapp-security-token) ;; Looks for $MYAPP_SECURITY_TOKEN env var
+                            ;; or myapp.security.token Java property or
+                            ;; myapp-security-token in your lein env iff
+                            ;; myapp/security/token key is not found in
+                            ;; an accessible etcd instance.
 ```
 
 There may be a slight delay the first time your code fetches a value
