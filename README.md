@@ -31,7 +31,7 @@ Scallion will consult an `etcd` instance running on `127.0.0.1` before
 one running on `172.17.42.1`, the rationale being that if both are
 present, it's running locally for a reason.
 
-Scallion will, if `etcd` is not available, it will look inside
+Scallion will, if `etcd` is not available, will look inside
 `environ.core/env`. Note that `environ.core/env` is a map, whereas
 `scallion.core/env` is a function. Also, because the issue of
 embedding security keys and so forth in source code is such a serious
