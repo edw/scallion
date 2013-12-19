@@ -9,7 +9,7 @@ before consulting environment variables, etc.
 Add the following dependency to your `project.clj`:
 
 ```clojure
-:dependencies [[environ "0.4.0"]]
+:dependencies [[edw/scallion "0.1.0"]]
 ```
 
 ## Usage
