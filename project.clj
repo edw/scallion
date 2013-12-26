@@ -1,4 +1,4 @@
-(defproject edw/scallion "0.1.0"
+(defproject edw/scallion "0.2.0-SNAPSHOT"
   :description "Scallion: a configuration tool"
   :url "http://github.com/edw/scallion"
   :main scallion.core

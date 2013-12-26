@@ -39,7 +39,7 @@
               :none
               hosts))))
 
-(defn etcd-get-from-host
+(defn- etcd-get-from-host
   [s host]
   (let [response @(http/get
                    (format "http://%s:%d/v1/keys/%s" host etcd-port s)
@@ -63,7 +63,11 @@
     nil))
 
 (defn env
-  ([key]
-     (or (etcd-env key)
-         (environ/env key)
-         nil)))
+  [key]
+  (or (etcd-env key)
+      (environ/env key)
+         nil))
+
+(defn env*
+  [key & ks]
+  (reduce #(assoc %1 %2 (env %2)) {key (env key)} ks))

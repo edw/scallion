@@ -9,15 +9,17 @@ before consulting environment variables, etc.
 Add the following dependency to your `project.clj`:
 
 ```clojure
-:dependencies [[environ "0.4.0"]]
+[scallion "0.2.0"]
 ```
 
 ## Usage
 
 ```clojure
-(require '[scallion.core :refer [env]])
+(require '[scallion.core :refer [env env*]])
 
 (env :path)
+;; Or...
+(env* :path1 :path2 :path3 ...)
 ```
 
 There may be a slight delay the first time your code fetches a value
@@ -39,7 +41,14 @@ one, there is no two-argument form of the function, making it more
 difficult for programmers to embed default values in source code.
 
 Since Scallion consults a web service for each key value, you should
-not call it `env` repeatedly for the same key.
+not call it `env` repeatedly for the same key. It is in deference to
+the reality of the non-trivial cost of calling `env` that the `env*`
+function exists. I recommend invoking `env*` once with all of the keys
+containing all of the external configuration options your code
+requires--in one, documented place--and consider assigning the
+returned value to an atom or a dynamically-scoped variable. The
+rationale for doing this is to allow you to easily re-load
+configuration information from a REPL during testing.
 
 ## License
 
