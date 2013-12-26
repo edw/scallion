@@ -1,7 +1,6 @@
 (defproject edw/scallion "0.2.0-SNAPSHOT"
   :description "Scallion: a configuration tool"
   :url "http://github.com/edw/scallion"
-  :main scallion.core
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[cheshire "5.3.0"]
