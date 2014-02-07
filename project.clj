@@ -1,4 +1,4 @@
-(defproject edw/scallion "0.2.0"
+(defproject edw/scallion "0.3.0"
   :description "Scallion: a configuration tool"
   :url "http://github.com/edw/scallion"
   :license {:name "Eclipse Public License"

@@ -42,7 +42,7 @@
 (defn- etcd-get-from-host
   [s host]
   (let [response @(http/get
-                   (format "http://%s:%d/v1/keys/%s" host etcd-port s)
+                   (format "http://%s:%d/v2/keys/%s" host etcd-port s)
                    etcd-get-options)]
     (if (= (:status response) 200)
       (-> (:body response)
