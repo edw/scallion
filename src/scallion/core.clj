@@ -48,6 +48,7 @@
       (-> (:body response)
           (parse-string)
           keywordize-keys
+          :node
           :value))))
 
 (defn- etcd-get
